@@ -16,7 +16,7 @@ def old_invent():
     dfs = {}
 
     #Reading all old Inventories in Folder
-    path = r'S:\EMEA\Lagerbestand\Hist_Bestaende'
+    path = r'S:\EMEA\Lagerbestand\Hist_Bestaende_wochenuebersicht'
     #path = r'S:\EMEA\Lagerbestand\woche'
     excel_files = glob.glob(os.path.join(path,"*.xlsx"))
 

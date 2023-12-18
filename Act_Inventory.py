@@ -65,7 +65,7 @@ def act_inventory():
     
             df_gesamt.drop(['FILTER', 'LAGERNR', 'VK/Stk', 'KEK/Stk','VK/Stk_Stkl', 'VK', 'DATUM'],axis=1, inplace=True)"""
 
-            df.to_excel(rf"S:\EMEA\Lagerbestand\Hist_Bestaende\'{today}'_{l}.xlsx", index=False)
+            df.to_excel(rf"S:\EMEA\Lagerbestand\Hist_Bestaende_wochenuebersicht\'{today}'_{l}.xlsx", index=False)
             #print(df_gesamt.to_markdown())
 
 
