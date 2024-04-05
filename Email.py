@@ -14,7 +14,8 @@ def send_email():
 
     #receivers = {'michael.pacher@emea-cosmetics.com': 'Michael','stefan.kandler@emea-cosmetics.com': 'Stefan','martin.bergler@emea-cosmetics.com': 'Martin',
                      #'josef.geisberger@emea-cosmetics.com': 'Josef', 'christoph.razek@emea-cosmetics.com': 'Chris', 'rainer.kienle@emea-cosmetics.com': 'Rainer'}
-    receivers = ['stefan.kandler@emea-cosmetics.com','christoph.razek@emea-cosmetics.com','martin.bergler@emea-cosmetics.com']
+    receivers = ['stefan.kandler@emea-cosmetics.com','christoph.razek@emea-cosmetics.com','martin.bergler@emea-cosmetics.com', 'rainer.kienle@emea-cosmetics.com',
+                 'rudolf.swerak@emea-cosmetics.com','josef.geisberger@emea-cosmetics.com']
 
     today =date.today()
 
