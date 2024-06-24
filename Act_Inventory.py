@@ -45,25 +45,6 @@ def act_inventory():
         if df.shape[0] == 0:
             continue
         else:
-            """#Erstellung des Auslister-Filters
-            df['FILTER'] = df['AUSLISTER'].str[:5]
-            df['FILTER'] = df['FILTER'].replace(['aktiv', 'XX/XX', 'XX'], ['30/03', '10/03', '10'])
-            df['FILTER'] = df['FILTER'].apply(lambda x: '20' + x + '/30')
-            df['FILTER'] = pd.to_datetime(df['FILTER'], format='%Y/%m/%d')
-    
-            #Filter auf aktuelle Artikel
-            df = df[df['FILTER'] >now]
-    
-            #VK der FW bei PM gemäß Stückliste
-            df_gesamt = pd.merge(df,df_stkl, how='left', on=['ARTIKELNR'])
-            df_gesamt['VK'] = df_gesamt.apply(lambda x: x['VK/Stk'] if x['VK/Stk'] > 0 else x['VK/Stk_Stkl'], axis=1)
-    
-            # Lagerwert
-            df_gesamt['Lagerwert_KEK'] = df_gesamt.apply(lambda x: x['BESTAND'] * x['KEK/Stk'], axis=1)
-            df_gesamt['Lagerwert_VK'] = df_gesamt.apply(lambda x: x['BESTAND'] * x['VK'], axis=1)
-            df_gesamt['DATUM'] = today
-    
-            df_gesamt.drop(['FILTER', 'LAGERNR', 'VK/Stk', 'KEK/Stk','VK/Stk_Stkl', 'VK', 'DATUM'],axis=1, inplace=True)"""
 
             df.to_excel(rf"S:\EMEA\Lagerbestand\Hist_Bestaende_wochenuebersicht\'{today}'_{l}.xlsx", index=False)
             #print(df_gesamt.to_markdown())
