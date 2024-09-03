@@ -15,7 +15,7 @@ def send_email():
     #receivers = {'michael.pacher@emea-cosmetics.com': 'Michael','stefan.kandler@emea-cosmetics.com': 'Stefan','martin.bergler@emea-cosmetics.com': 'Martin',
                      #'josef.geisberger@emea-cosmetics.com': 'Josef', 'christoph.razek@emea-cosmetics.com': 'Chris', 'rainer.kienle@emea-cosmetics.com': 'Rainer'}
     receivers = ['stefan.kandler@emea-cosmetics.com','christoph.razek@emea-cosmetics.com','martin.bergler@emea-cosmetics.com', 'rainer.kienle@emea-cosmetics.com',
-                 'anton.usanov@emea-cosmetics.com','anica.milicevic@emea-cosmetics.com','josef.geisberger@emea-cosmetics.com']
+                 'anton.usanov@emea-cosmetics.com','daniel.kovacs@emea-cosmetics.com','josef.geisberger@emea-cosmetics.com']
 
     today =date.today()
 
@@ -38,7 +38,7 @@ def send_email():
 
     mail_item.Display()
     mail_item.Save()
-    mail_item.Send()
+    #mail_item.Send()
     #shutil.copy(r'S:\EMEA\Lagerbestand\LagerbestandV2.xlsx',fr'S:\EMEA\Lagerbestand\Wochenauswertung\Lagerbestand_{today}.xlsx')
 
 
