@@ -2,14 +2,14 @@
 
 stkl = """SELECT s.[ARTIKELNR], max(a.VK1/a.VKPRO) as 'VK/Stk_Stkl'
 
-  FROM [EMEA_enventa_live].[dbo].[STUECKLISTE] as s
-  left join [EMEA_enventa_live].[dbo].[ARTIKEL] as a
+  FROM [EMEA_enventa_live45].[dbo].[STUECKLISTE] as s
+  left join [EMEA_enventa_live45].[dbo].[ARTIKEL] as a
   on s.BAUGRUPPE = a.ARTIKELNR
   where s.branchkey = 110 and s.bezeichnung like 'PM%'
   group by s.ARTIKELNR"""
 
 sql_lagernr = '''SELECT Distinct[LAGERNR]
-      FROM [emea_enventa_live].[dbo].[LAGERORT] 
+      FROM [emea_enventa_live45].[dbo].[LAGERORT] 
       where lagernr not in (101,102,103,110,195,198,199)
       order by LAGERNR'''
 
@@ -28,9 +28,9 @@ margins = """with cte_auftrag as (
       ,datepart(YEAR,ap.[FAKTURADATUM]) as 'FAKTURA_JAHR'
 	  ,datepart(ISO_WEEK,ap.[FAKTURADATUM]) as 'FAKTURA_KW'
     
-  FROM [emea_enventa_live].[dbo].[AUFTRAGSPOS] as ap
-  left join [emea_enventa_live].[dbo].[ARTIKEL] as a on ap.ARTIKELNR = a.ARTIKELNR
-  left join [emea_enventa_live].[dbo].[KUNDEN] as k on ap.KUNDENNR = k.KUNDENNR
+  FROM [emea_enventa_live45].[dbo].[AUFTRAGSPOS] as ap
+  left join [emea_enventa_live45].[dbo].[ARTIKEL] as a on ap.ARTIKELNR = a.ARTIKELNR
+  left join [emea_enventa_live45].[dbo].[KUNDEN] as k on ap.KUNDENNR = k.KUNDENNR
 
   WHERE ap.BranchKey = 110 and ap.STATUS = 4 and ap.BELEGART in ('1','2','3','4') and ap.KUNDENNR like '10%' and FAKTURADATUM > '2022-12-31' and ap.BEZEICHNUNG not like 'TS%'
   

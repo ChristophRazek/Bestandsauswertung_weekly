@@ -14,7 +14,7 @@ def act_inventory():
     now = datetime.now()
 
     # Query Connection
-    connx_string = r'DRIVER={SQL Server}; server=172.19.128.2\emeadb; database=emea_enventa_live; UID=usr_razek; PWD=wB382^%H3INJ'
+    connx_string = r'DRIVER={SQL Server}; server=172.19.128.2\emeadb; database=emea_enventa_live45; UID=usr_razek; PWD=wB382^%H3INJ'
     conx = pyodbc.connect(connx_string)
 
     #Ermittlung der betreffenden Läger
@@ -25,7 +25,7 @@ def act_inventory():
 
     for l in lagernr:
         sql_history = rf'''with cte_artikel as (select artikelnr,bezeichnung, code2 as auslister, vk1/VKPRO as 'VK/Stk', kek/EKPRO as 'KEK/Stk' from artikel),
-        cte_lager as (SELECT Distinct[LAGERNR], BEZEICHNUNG FROM [emea_enventa_live].[dbo].[LAGERORT] 
+        cte_lager as (SELECT Distinct[LAGERNR], BEZEICHNUNG FROM [emea_enventa_live45].[dbo].[LAGERORT] 
         where lagernr not in (101,102,103,110,195,198,199))
     
         select l.ARTIKELNR, Max(cte_artikel.BEZEICHNUNG) as 'BEZEICHNUNG', SUM(menge) as 'BESTAND', Max(l.LAGERNR) as 'LAGERNR', Max(cte_lager.BEZEICHNUNG) as 'LAGER', 

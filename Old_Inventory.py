@@ -10,7 +10,7 @@ warnings.simplefilter('ignore')
 def old_invent():
 
     # Query Connection
-    connx_string = r'DRIVER={SQL Server}; server=172.19.128.2\emeadb; database=emea_enventa_live; UID=usr_razek; PWD=wB382^%H3INJ'
+    connx_string = r'DRIVER={SQL Server}; server=172.19.128.2\emeadb; database=emea_enventa_live45; UID=usr_razek; PWD=wB382^%H3INJ'
     conx = pyodbc.connect(connx_string)
     df_stkl = pd.read_sql(s.stkl, conx)
     dfs = {}
