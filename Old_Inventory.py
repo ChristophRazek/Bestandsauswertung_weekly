@@ -65,7 +65,9 @@ def old_invent():
         dfs_concat['FILTER'] = dfs_concat['FILTER'].replace(['aktiv', 'XX/XX', 'XX'], ['30/03', '10/03', '10'])
 
 
-        dfs_concat['FILTER'] = dfs_concat['FILTER'].astype(str).apply(lambda x: '20' + x + '/30')
+        dfs_concat['FILTER'] = dfs_concat['FILTER'].astype(str).apply(lambda x: '20' + x + '/28')
+
+
 
         dfs_concat['FILTER'] = pd.to_datetime(dfs_concat['FILTER'], format='%Y/%m/%d')
 
